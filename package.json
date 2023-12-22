@@ -5,20 +5,23 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
-  }, 
+  },
   "dependencies": {
     "@google-cloud/storage": "^7.7.0",
     "@hapi/hapi": "^21.3.2",
     "@hapi/inert": "^7.1.0",
+    "@tensorflow/tfjs": "^4.15.0",
+    "@tensorflow/tfjs-node": "^4.15.0",
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "firebase": "^10.6.0",
     "firebase-admin": "^11.11.1",
     "formidable": "^3.5.1",
     "moment": "^2.29.4",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   }
-}  
+}
