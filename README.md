@@ -115,9 +115,8 @@
   * **Method :** `POST`
   * **Body :** </br>
     `detectionTimestamp` as `timestamp`</br>
-    `fertilization` as `boolean`</br>
-    `phase` as `string`</br>
-    `pixels` as `array`</br>
+    `label` as `string`</br>
+    `images` as `file`</br>
     `userId` as `string`
   * **response :** </br>
     * **status code :** 200 </br>
@@ -206,4 +205,41 @@
         "email": "ambatukam@gmail.com"
       }
       /// dan data user lainnya
+      ```
+
+* **Predict Egg Images Based On UID**
+  * **Endpoint :** `predict`
+  * **Method :** `POST`
+  * **Body :** </br>
+    `label` as `string`</br>
+    `userId` as `string`
+    `images` as `file`
+  * **response :** </br>
+    * **status code :** 200 </br>
+      **body :**
+      ```
+       {
+           "timestamp": "22/12/2023, 14.26.35",
+           "phase": [
+            {
+            "kelas": "Pertengahan",
+            "probabilitas": 0.12300311861649722
+             },
+            {
+            "kelas": "Tahap Akhir",
+            "probabilitas": 0.009687491218578183
+            },
+            {
+            "kelas": "Tahap Awal",
+            "probabilitas": 99.76835661864924
+             },
+            {
+            "kelas": "Telur Mati",
+            "probabilitas": 0.09895277151569165
+            }
+            ],
+           "imageURL": "https://storage.googleapis.com/avid-lock-405816.appspot.com/images/884vxsSk54ezneEdENpqvLk0GcN2/gambar_884vxsSk54ezneEdENpqvLk0GcN2_1703229994900.jpg",
+           "userId": "884vxsSk54ezneEdENpqvLk0GcN2",
+           "label": "foto kelima"
+       }
       ```
