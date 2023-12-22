@@ -1,5 +1,6 @@
 const userController = require('../controller/userController');
 const EggDetectedController = require('../controller/EggDetectedController');
+const EggPredictionController = require('../controller/EggPredictionController.js');
 const { bucket } = require('../server.js');
 
 const routes = [
@@ -69,6 +70,22 @@ const routes = [
     path: '/api/users',
     handler: userController.apiuser,
   },
+  {
+    method : 'POST',
+    path : '/predict',
+    handler : EggPredictionController.predict,
+    options : {
+        payload : {
+            multipart : true,
+            output: 'file',
+            parse : true,
+            allow: 'multipart/form-data'
+        },
+        log : {
+            collect : true
+        }
+    }
+}
 ];
 
 module.exports = routes; 
